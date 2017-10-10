@@ -10,6 +10,9 @@ available for header inclusion and library linking.
 Example:
 
 ```c++
+
+// file: whatstem.cpp
+
 // grindtrick import boost_filesystem
 // grindtrick import boost_system
 
@@ -25,6 +28,15 @@ int main(int /*argc*/, char ** argv)
 
 	return 0;
 }
+```
+
+The program can then be compiled and linked:
+
+```
+$ grind whatstem.cpp
+$ ./whatstem
+"whatstem"
+$
 ```
 
 The dependencies are configured through a .grindconfig
