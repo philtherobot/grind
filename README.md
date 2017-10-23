@@ -10,9 +10,6 @@ available for header inclusion and library linking.
 Example:
 
 ```c++
-
-// file: whatstem.cpp
-
 // grindtrick import boost_filesystem
 // grindtrick import boost_system
 
@@ -20,22 +17,28 @@ Example:
 
 #include <boost/filesystem.hpp>
 
-int main(int /*argc*/, char ** argv)
+int main(int argc, char ** argv)
 {
-	boost::filesystem::path pgm(argv[0]);
+    if( argc < 2 )
+    {
+        std::cout << "no argument given\n";
+        return 1;
+    }
 
-	std::cout << pgm.stem() << '\n';
+    boost::filesystem::path pgm(argv[1]);
 
-	return 0;
+    std::cout << pgm.stem() << '\n';
+
+    return 0;
 }
 ```
 
 The program can then be compiled and linked:
 
 ```
-$ grind whatstem.cpp
-$ ./whatstem
-"whatstem"
+$ grind print_stem.cpp hello.cpp
+$ ./print_stem
+"hello"
 $
 ```
 
