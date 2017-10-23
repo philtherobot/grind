@@ -175,7 +175,7 @@ void compile(path const & sourcefn, path const & outputfn)
 
 	args += "-Wall", "-Wextra", "-Wpedantic";
 	args += "-pthread";
-	args += "--std=gnu++14";
+	args += "--std=gnu++17";
 
 	for_each(hdrs.begin(), hdrs.end(), [&args] (string const & h) { args += "-I" + h; });
 
